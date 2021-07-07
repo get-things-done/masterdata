@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up()
+    {
+        Schema::create('masterdata', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('group_id')->default(1)->index();
+            $table->string('code')->default('default')->index();
+            $table->string('name');
+            $table->unsignedInteger('order')->default(0);
+            $table->unsignedTinyInteger('is_actived')->default(1)->index();
+            $table->timestamps();
+            $table->softDeletes();
+        });
+
+        Group::create([
+            'name' => 'Default'
+        ]);
+
+        Schema::create('ttls', function (Blueprint $table) {
+            $table->id();
+            $table->morphs('entity');
+            $table->timestamps('expired_at');
+            $table->softDeletes();
+        });
+
+    }
+};
