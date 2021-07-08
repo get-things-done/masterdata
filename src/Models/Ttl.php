@@ -1,11 +1,16 @@
 <?php
 namespace GetThingsDone\Masterdata\Models;
 
+use DateTimeInterface;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class Ttl extends Model
 {
+    protected $fillable = [
+        'expired_at'
+    ];
+
     protected $casts = [
         'expired_at' => 'datetime'
     ];
@@ -25,5 +30,10 @@ class Ttl extends Model
     public function entity()
     {
         return $this->morphTo();
+    }
+
+    public function expired(): bool
+    {
+        return $this->expired_at < now();
     }
 }
