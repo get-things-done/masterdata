@@ -9,5 +9,6 @@ interface HasTtl
     public function ttl(): MorphOne;
 
     public function scopeExpired(Builder $query): Builder;
+
     public function scopeAlive(Builder $query): Builder;
 }

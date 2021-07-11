@@ -2,9 +2,9 @@
 
 namespace GetThingsDone\Masterdata;
 
+use GetThingsDone\Masterdata\Commands\MasterdataCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use GetThingsDone\Masterdata\Commands\MasterdataCommand;
 
 class MasterdataServiceProvider extends PackageServiceProvider
 {

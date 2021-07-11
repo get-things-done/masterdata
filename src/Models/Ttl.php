@@ -1,18 +1,17 @@
 <?php
 namespace GetThingsDone\Masterdata\Models;
 
-use DateTimeInterface;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class Ttl extends Model
 {
     protected $fillable = [
-        'expired_at'
+        'expired_at',
     ];
 
     protected $casts = [
-        'expired_at' => 'datetime'
+        'expired_at' => 'datetime',
     ];
 
     /**
@@ -22,8 +21,8 @@ class Ttl extends Model
      */
     protected static function booted()
     {
-        static::addGlobalScope('expired', function(Builder $builder){
-            return $builder->where('expired_at','>', now());
+        static::addGlobalScope('expired', function (Builder $builder) {
+            return $builder->where('expired_at', '>', now());
         });
     }
 

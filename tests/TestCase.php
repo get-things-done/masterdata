@@ -2,9 +2,9 @@
 
 namespace GetThingsDone\Masterdata\Tests;
 
+use GetThingsDone\Masterdata\MasterdataServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use GetThingsDone\Masterdata\MasterdataServiceProvider;
 
 class TestCase extends Orchestra
 {

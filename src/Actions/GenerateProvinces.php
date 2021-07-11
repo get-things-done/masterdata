@@ -1,12 +1,13 @@
 <?php
 namespace App\Actions\Masterdata;
 
-use Lorisleiva\Actions\Concerns\AsAction;
 use GetThingsDone\Masterdata\Models\Group;
+use Lorisleiva\Actions\Concerns\AsAction;
 
 class GenerateProvinces
 {
     use AsAction;
+
     public function handle()
     {
         $group = Group::create([
@@ -16,7 +17,7 @@ class GenerateProvinces
 
         $group->elements()->createMany(
             array_map(
-                fn($province) => ['name' => $province],
+                fn ($province) => ['name' => $province],
                 $this->provinces()
             )
         );
@@ -87,7 +88,7 @@ class GenerateProvinces
             'Thừa Thiên Huế',
             'Trà Vinh',
             'Vĩnh Long',
-            'Phú Yên'
+            'Phú Yên',
         ];
     }
 }
