@@ -1,9 +1,9 @@
 <?php
 namespace GetThingsDone\Masterdata\Tests\Response;
 
+use GetThingsDone\Masterdata\Models\Entity;
 use GetThingsDone\Masterdata\Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use GetThingsDone\Masterdata\Models\Entity;
 
 class EntityTest extends TestCase
 {
@@ -14,12 +14,12 @@ class EntityTest extends TestCase
     {
         $entity = Entity::create();
 
-        $response = $entity->response()->create(['value'=> ['key' => 'value']]);
+        $response = $entity->response()->create(['value' => ['key' => 'value']]);
 
         $this->assertEquals(
             $response->value,
             (object) [
-                'key' => 'value'
+                'key' => 'value',
             ]
         );
     }

@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 class Response extends Model
 {
     protected $fillable = [
-        'value'
+        'value',
     ];
     protected $casts = [
-        'value' => 'object'
+        'value' => 'object',
     ];
 
     public function entity()
