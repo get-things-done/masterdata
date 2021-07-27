@@ -8,7 +8,7 @@ class Element extends Model
     protected $table = 'masterdata';
 
     protected $fillable = [
-        'code', 'name'
+        'code', 'name',
     ];
 
     public function group()
