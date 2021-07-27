@@ -7,6 +7,10 @@ class Group extends Model
 {
     protected $table = 'masterdata';
 
+    protected $fillable = [
+        'code', 'name'
+    ];
+
     public function elements()
     {
         return $this->hasMany(Element::class);
